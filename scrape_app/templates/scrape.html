@@ -1,0 +1,61 @@
+{% extends "base.html" %}
+
+
+{% block page_content %}
+<div>
+    <h1 class="page-title"> Analyze reviews using: {{ scraper_name }}</h1>
+    <div id="wrong-scraper" class="text-center font-italic">
+        Made wrong selection? Go <a class="link-light-bg" href="{% url 'index' %}">back</a>.
+    </div>
+</div>
+
+<div id="scraper_parameters_form" class="my-scraper-form my-bg-light">
+    <span>
+        Insert the URL and the parameters, then press <i>Get Reviews!</i>.
+    </span>
+
+    <form class="mt-1" method="post">
+        {% csrf_token %}
+        <ul>
+            {% for field in form %}
+            <li>
+                {{ field.label_tag }} {{ field }}
+            </li>
+            {% endfor %}
+        </ul>
+        <input id="start_scrape_task" type="submit" name="start_scrape_task" value="Get Reviews!"
+               class="btn btn-go mr-4">
+    </form>
+</div>
+
+<div>
+    {% if running_task_id is not null%}
+
+    <!-- Here we store the  running_task_id and we hide it from the user, so that the JS code can read it.
+     Todo: investigate more elegant solution to keep track of the task id -->
+    <span class="not-visible" id="scrape_tid" data-scrape-tid="{{ running_task_id }}">
+            A scraper is running. The task id is: {{ running_task_id }}
+    </span>
+
+    <p id="kill_task_div" class="not-visible mt-2">
+        Click this button to stop collecting reviews:
+        <input id="kill_task_btn" type="submit" value="Stop" style="display: inline;" class="btn btn-danger btn-sm">
+    </p>
+
+    <!-- Placeholders filled by JS with the task results-->
+    <h2 id="results_str" class="text-center page-sub-title"></h2>
+    <p id="info_str" class="text-center d-block"></p>
+    <div id="results_graph"></div>
+
+
+    {% else %}
+
+    <p>
+        No scrapers are running, enter the URL and press <span class="highlight-text">Get Reviews!</span> (button
+        above).
+    </p>
+
+    {% endif %}
+</div>
+
+{% endblock %}

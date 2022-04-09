@@ -1,0 +1,37 @@
+{% extends "base.html" %}
+
+{% block page_content %}
+<h1 class="bd-title page-title">Welcome to Review Tracker</h1>
+
+<div class="text-center my-scraper-form my-bg-light">
+    <form method="post">
+        {% csrf_token %}
+        {% for field in form %}
+            {{ field.label_tag }} {{ field }}
+        {% endfor %}
+        <br>
+        <input type="submit" value="Select" class="btn btn-go mt-1">
+    </form>
+</div>
+
+<div id="website_description">
+  <h2 class="page-sub-title">What can you do with this website?</h2>
+    <p class="text-justify">
+        With this website you can analyze the <span class="highlight-text">evolution over time of reviews</span>.
+        The website collects all the reviews of a place that you like and plots how the average score changed over time.
+        Use the form above to get started. To know more, please watch the following video.
+    </p>
+
+    <div id="video_tutorial" class="row mt-2 mb-2">
+    <div class="col"></div>  <!-- Just for lateral spacing-->
+      <div class="col-lg-5 col-md-8 col-10 p-0">  <!-- Do not put more than 10, else lateral spacing does not work -->
+          <div class="ratio ratio-16x9">
+              <iframe src="https://www.youtube.com/embed/jhnRtDc4NAc" title="YouTube video" allowfullscreen></iframe>
+          </div>
+      </div>
+      <div class="col"></div> <!-- Just for lateral spacing -->
+    </div>  <!-- close video_tutorial -->
+</div>  <!-- close website_description -->
+
+
+{% endblock %}
