@@ -9,6 +9,5 @@ urlpatterns = [
     path('api/get_scrape_task_results', views.get_scrape_task_results, name="get_scrape_task_results"),
     path('api/stop_scraping_and_get_partial_results',
          views.stop_scraping_and_get_partial_results,
-         name="stop_scraping_and_get_partial_results"),
-    path('testux', views.test_view),
+         name="stop_scraping_and_get_partial_results")
 ]

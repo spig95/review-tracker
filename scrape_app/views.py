@@ -112,7 +112,3 @@ def get_json_response_with_task_results(running_task_id):
         }
 
     return JsonResponse(ret)
-
-
-def test_view(request):
-    return render(request, 'test-ux.html')
