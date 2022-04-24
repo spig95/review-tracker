@@ -4,10 +4,17 @@
   --dark: #4d7e80;
   --light: #9fc4c6;
   --ultralight: #eff5f5;
+  --normal-font-size: 16px;
 }
 
 *, *::before, *::after {
   box-sizing: border-box;
+}
+
+body,
+.btn,
+.navbar-brand {
+    font-size: var(--normal-font-size);
 }
 
 .not-visible {
@@ -16,18 +23,18 @@
 
 .page-title {
     text-align: center;
-    font-size: 2rem;
+    font-size: 2.5rem;
     font-weight: 300;
     margin-top: 1rem;
-    margin-bottom: 1rem
+    margin-bottom: 1rem;
 }
 
 .page-sub-title {
     text-align: center;
-    font-size: 1.75rem;
-    font-weight: 300;
-    margin-top: 3rem;
-    margin-bottom: 1rem
+    font-size: 2.25rem;
+    font-weight: 280;
+    margin-top: 2rem;
+    margin-bottom: 1rem;
 }
 
 .link-dark-bg {
@@ -69,7 +76,7 @@
 }
 
 #navbar_and_content {
-    min-height: 95%
+    min-height: 95%;
 }
 
 footer {
@@ -78,13 +85,41 @@ footer {
     align-items: center;
 }
 
-.my-scraper-form {
+.my-form {
     padding: 1rem;
     margin-top: 1rem;
     margin-bottom: 1rem;
+    border-radius: 6px;
+    box-shadow: var(--dark) 1.95px 1.95px 2.6px;
 }
 
 #results_graph {
-    height: 500px
+    height: 500px;
+}
+
+#navbar-button {
+    font-size: 0.75rem
+}
+
+
+@media (max-width: 767px) {
+    :root {
+        --normal-font-size: calc(1rem + 0.25vw);
+    }
+
+    .page-title {
+        font-size: 1.8rem;
+        font-weight: 500;
+    }
+
+    .page-sub-title {
+        font-size: 1.6rem;
+        font-weight: 475;
+        margin-top: 3rem;
+    }
+
+    #footer {
+        margin-top: 5rem;
+    }
 }
 

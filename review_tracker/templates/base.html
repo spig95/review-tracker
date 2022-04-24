@@ -3,6 +3,7 @@
   <head>
     {% load static %}
     <title>Review Tracker</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <link href="{% static 'favicon.ico' %}" rel="shortcut icon">
 
@@ -14,7 +15,7 @@
   </head>
   <body>
     <!-- A content wrapper, needed to impose the correct style to the footer -->
-    <div id="content_wrapper" style="height: 100vh">
+    <div id="content_wrapper" class="vh-100">
 
       <!-- Wrapper for navbar and main content -->
       <div id="navbar_and_content">
@@ -25,13 +26,13 @@
             <a class="navbar-brand" href="{% url 'index' %}">Review Tracker</a>
 
             <!-- Burger icon when page is small-->
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar_links" aria-controls="navbar_links" aria-expanded="false" aria-label="Toggle navigation" style="font-size: 0.75rem">
+            <button id="navbar-button" class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar_links" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
               <span class="navbar-toggler-icon"></span>
             </button>
 
             <!-- Links in the navbar, collapse when the page is small -->
-            <div id="navbar_links" class="collapse navbar-collapse text-end">
-              <ul class="navbar-nav mr-auto mt-2 mt-md-0">
+            <div id="navbar_links" class="collapse navbar-collapse text-center">
+              <ul class="navbar-nav mr-auto">
                 <li class="nav-item">
                   <a class="nav-link" href="{% url 'index' %}">Home</a>
                 </li>
@@ -56,7 +57,7 @@
 
 
       <footer id="footer" class="my-bg-dark">
-        <div class="container-lg text-end">
+        <div class="container-lg text-end pt-2 pb-2">
           Version 1.0 - &copy Spig - <a href="https://github.com/spig95/review-tracker#2-want-to-contribute" class="link-dark-bg" target="_blank">Want to contribute?</a>
         </div>
       </footer>

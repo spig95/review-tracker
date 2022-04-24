@@ -9,9 +9,9 @@
     </div>
 </div>
 
-<div id="scraper_parameters_form" class="my-scraper-form my-bg-light">
+<div id="scraper_parameters_form" class="my-form my-bg-light">
     <span>
-        Insert the URL and the parameters, then press <i>Get Reviews!</i>.
+        Fill the form, then press <i>Get Reviews</i>!
     </span>
 
     <form class="mt-1" method="post">
@@ -28,7 +28,7 @@
     </form>
 </div>
 
-<div>
+<div class="mt-2">
     {% if running_task_id is not null%}
 
     <!-- Here we store the  running_task_id and we hide it from the user, so that the JS code can read it.
@@ -50,7 +50,7 @@
 
     {% else %}
 
-    <p>
+    <p class="mt-5 mb-5">
         No scrapers are running, enter the URL and press <span class="highlight-text">Get Reviews!</span> (button
         above).
     </p>
