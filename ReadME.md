@@ -3,7 +3,7 @@
 A Django project to scrape reviews and show the average evolution over time. See the project at https://reviewtracker.herokuapp.com.
 
 ### Watch the following video see how the website works
-[<img src="https://img.youtube.com/vi/jhnRtDc4NAc/maxresdefault.jpg" width="600">](https://youtu.be/jhnRtDc4NAc)
+[<img src="https://img.youtube.com/vi/nw7wc2y8jpY/maxresdefault.jpg" width="600">](https://youtu.be/nw7wc2y8jpY)
 
 
 ## 1 Local setup
