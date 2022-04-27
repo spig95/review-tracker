@@ -90,12 +90,13 @@ def get_html_plot(timestamps, ratings, default_delta_days=360, with_slider=False
     fig.update_layout(
         xaxis_title="Date",
         yaxis_title="Rating",
-        # legend=dict(
-        #     yanchor="bottom",
-        #     y=0.01,
-        #     xanchor="left",
-        #     x=0.01
-        # ),
+        legend=dict(
+            orientation="h",
+            yanchor="bottom",
+            y=1.02,
+            xanchor="right",
+            x=1
+        ),
         margin=dict(t=30)
     )
 
